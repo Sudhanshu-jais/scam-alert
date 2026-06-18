@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(135deg, rgba(56, 217, 200, 0.08), rgba(255, 204, 102, 0.04) 38%, transparent 72%),
+    #071014;
+  background-size: 44px 44px, 44px 44px, 100% 100%, 100% 100%;
+  color: #e8fbf8;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  20%,
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(340%);
+    opacity: 0;
+  }
+}
+
+.scan-line::after {
+  animation: scan 2.6s ease-in-out infinite;
+  background: linear-gradient(90deg, transparent, rgba(56, 217, 200, 0.75), transparent);
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
